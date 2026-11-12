@@ -59,7 +59,7 @@
 #ifndef VCAST_HAS_LONGLONG
 #define VCAST_HAS_LONGLONG
 #endif
-#define VCAST_COVERAGE_TYPE_STATEMENT
+#define VCAST_COVERAGE_TYPE_STATEMENT_BRANCH
 #ifndef VCAST_USE_OPTIMIZED_MCDC_INSTRUMENTATION
 #define VCAST_USE_OPTIMIZED_MCDC_INSTRUMENTATION
 #endif
@@ -92,15 +92,18 @@
  * 
  * For a 16 bit executable configuration:
  *   statement bit array:.................size: 1          count: 1      bytes:  1
- *   Total (no MC/DC pool storage):......................................bytes:  1 *
+ *   branch bit array:....................size: 1          count: 2      bytes:  2
+ *   Total (no MC/DC pool storage):......................................bytes:  3 *
  * 
  * For a 32 bit executable configuration:
  *   statement bit array:.................size: 1          count: 1      bytes:  1
- *   Total (no MC/DC pool storage):......................................bytes:  1 *
+ *   branch bit array:....................size: 1          count: 2      bytes:  2
+ *   Total (no MC/DC pool storage):......................................bytes:  3 *
  * 
  * For a 64 bit executable configuration:
  *   statement bit array:.................size: 1          count: 1      bytes:  1
- *   Total (no MC/DC pool storage):......................................bytes:  1 *
+ *   branch bit array:....................size: 1          count: 2      bytes:  2
+ *   Total (no MC/DC pool storage):......................................bytes:  3 *
  */
 #ifndef VCAST_CONDITION_TYP
 #define VCAST_CONDITION_TYP long long
@@ -118,12 +121,22 @@ char vcast_unit_stmt_bytes_9[1];
 #else
 char vcast_unit_stmt_bytes_9[1] = { 0 };
 #endif
+#ifdef VCAST_COVER_SHORT_ARRAY_INIT
+char vcast_unit_branch_bytes_9[2] = { 0 };
+#elif defined(VCAST_COVER_NO_INIT)
+char vcast_unit_branch_bytes_9[2];
+#else
+char vcast_unit_branch_bytes_9[2] = 
+  {0,0};
+#endif
 
 #ifdef VCAST_COVERAGE_IO_BUFFERED
 struct vcast_unit_list {
   int vcast_unit;
   char *vcast_statement_array;
   int vcast_statement_bytes;
+  char *vcast_branch_array;
+  int vcast_branch_bytes;
 };
 
 #ifndef VCAST_UNIT_LIST_VALUES_ATTR
@@ -132,8 +145,8 @@ struct vcast_unit_list {
 
 VCAST_UNIT_LIST_VALUES_ATTR
 static const struct vcast_unit_list vcast_unit_list_values[] = {
-  {9, (char *)vcast_unit_stmt_bytes_9, sizeof(vcast_unit_stmt_bytes_9)},
-  {0, 0, 0}
+  {9, (char *)vcast_unit_stmt_bytes_9, sizeof(vcast_unit_stmt_bytes_9), (char *)vcast_unit_branch_bytes_9, sizeof(vcast_unit_branch_bytes_9)},
+  {0, 0, 0, 0, 0}
 };
 
 #endif

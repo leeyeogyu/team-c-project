@@ -1,5 +1,5 @@
-#line 3 "vcast_preprocess.16792.1002.c"                                                                                                                              
-# 1 "vcast_preprocess.16792.1000.c" 1
+#line 3 "vcast_preprocess.17192.1002.c"                                                                                                                              
+# 1 "vcast_preprocess.17192.1000.c" 1
 
 typedef int VECTORCAST_MARKER__USER_GLOBALS_START;
 
@@ -8,7 +8,7 @@ S0000008.c: This file contains the definitions of variables used in user code.
 Preface all variable declarations with VCAST_USER_GLOBALS_EXTERN to ensure 
 that only one definition of the variable is created in the test harness. 
 *****************************************************************************/
-# 17 "vcast_preprocess.16792.1000.c"
+# 17 "vcast_preprocess.17192.1000.c"
   int VECTORCAST_INT1;
   int VECTORCAST_INT2;
   int VECTORCAST_INT3;
@@ -23,6 +23,6 @@ that only one definition of the variable is created in the test harness.
 
 
 typedef int VECTORCAST_MARKER__USER_GLOBALS_END;
-# 4 "vcast_preprocess.16792.1002.c" 2
+# 4 "vcast_preprocess.17192.1002.c" 2
 
                                                

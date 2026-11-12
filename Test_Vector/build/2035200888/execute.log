@@ -1,13 +1,13 @@
 COMMAND: C:\VCAST\clicast.exe -e TEST_VEC -l C execute batch
 DIRECTORY: C:/VCAST/Environments/Test_Vector/build/2035200888
-TIME: 2026-11-12 10:10:09
+TIME: 2026-11-12 15:40:15
 TEST SUITE: VectorCAST_MinGW_C/TestSuite
 -----------------------------Process Environment------------------------------
 SYSTEMROOT=C:\WINDOWS
 COMSPEC=C:\WINDOWS\system32\cmd.exe
 COMMONPROGRAMFILES=C:\Program Files\Common Files
 COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files
-PATH=C:\VCAST\MinGW\bin;C:\Program Files\Eclipse Adoptium\jdk-21.0.13.9-hotspot\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\gcc\bin;C:\Program Files\Git\cmd;C:\Users\gangn\.local\bin;C:\Users\gangn\AppData\Local\Microsoft\WindowsApps;C:\Users\gangn\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\gangn\AppData\Local\Programs\Microsoft VS Code\bin\copilot-shim;C:\Users\gangn\AppData\Local\Programs\Ollama
+PATH=C:\VCAST\MinGW\bin;C:\Program Files\Git\cmd;C:\VCAST;C:\Program Files\Eclipse Adoptium\jdk-21.0.13.9-hotspot\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\gcc\bin;C:\Program Files\Git\cmd;C:\Users\gangn\.local\bin;C:\Users\gangn\AppData\Local\Microsoft\WindowsApps;C:\Users\gangn\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\gangn\AppData\Local\Programs\Microsoft VS Code\bin\copilot-shim;C:\Users\gangn\AppData\Local\Programs\Ollama
 SYSTEMDRIVE=C:
 VCAST_MANAGE_PROJECT_DIRECTORY=C:\VCAST\Environments\Test_Vector
 ONEDRIVECONSUMER=C:\Users\gangn\OneDrive

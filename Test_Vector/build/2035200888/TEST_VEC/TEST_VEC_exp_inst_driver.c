@@ -2076,19 +2076,25 @@ void VCAST_WRITE_TO_INST_FILE (const char VC_S[]);
 
  * For a 16 bit executable configuration:
 
- *   Total (no MC/DC pool storage):......................................bytes:  0 *
+ *   statement bit array:.................size: 1          count: 1      bytes:  1
+
+ *   Total (no MC/DC pool storage):......................................bytes:  1 *
 
  * 
 
  * For a 32 bit executable configuration:
 
- *   Total (no MC/DC pool storage):......................................bytes:  0 *
+ *   statement bit array:.................size: 1          count: 1      bytes:  1
+
+ *   Total (no MC/DC pool storage):......................................bytes:  1 *
 
  * 
 
  * For a 64 bit executable configuration:
 
- *   Total (no MC/DC pool storage):......................................bytes:  0 *
+ *   statement bit array:.................size: 1          count: 1      bytes:  1
+
+ *   Total (no MC/DC pool storage):......................................bytes:  1 *
 
  */
 void vCAST_CLOSE_INST_FILE (void);

@@ -1,5 +1,5 @@
-#line 3 "vcast_preprocess.16792.1018.c"                                                                                                                              
-# 1 "vcast_preprocess.16792.1016.c" 1
+#line 3 "vcast_preprocess.7716.1002.c"                                                                                                                             
+# 1 "vcast_preprocess.7716.1000.c" 1
 
 typedef int VECTORCAST_MARKER__UNIT_PREFIX_START;
 
@@ -20,11 +20,13 @@ int check_status(int temp, int voltage, int error_flag) {
     else if (error_flag != 0) return 2;
     return 0;
 }
-# 6 "vcast_preprocess.16792.1016.c" 2
+
+// Test
+# 6 "vcast_preprocess.7716.1000.c" 2
 
 typedef int VECTORCAST_MARKER__UNIT_APPENDIX_START;
 
 typedef int VECTORCAST_MARKER__UNIT_APPENDIX_END;
-# 4 "vcast_preprocess.16792.1018.c" 2
+# 4 "vcast_preprocess.7716.1002.c" 2
 
                                                

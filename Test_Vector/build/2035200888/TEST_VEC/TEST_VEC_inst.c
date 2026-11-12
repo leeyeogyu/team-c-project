@@ -820,6 +820,8 @@ void vcast_probe_print_float (vCAST_long_double f);
 extern "C" {
 #endif
 extern char vcast_unit_stmt_bytes_9[];
+extern char vcast_unit_branch_bytes_9[];
+extern char vcast_unit_single_branch_bytes_9[];
 #ifdef __cplusplus
 } /* end extern */
 #endif
@@ -849,15 +851,11 @@ if(SBF_9_1) {
   return R_9_1;
 }
 { /*vcast_internal_end*/
-    {
-{
+    VCAST_BRANCH_INSTRUMENTATION_POINT_REALTIME(vcast_unit_branch_bytes_9,9,0,1);
+if ( VCAST_BRANCH_INSTRUMENTATION_POINT_REALTIME(vcast_unit_branch_bytes_9,9,1,(VCAST_CONDITION_TYP)(b == 0))) {
 VCAST_STATEMENT_INSTRUMENTATION_POINT_REALTIME(vcast_unit_stmt_bytes_9,9,0);
-if (b == 0) {
-VCAST_STATEMENT_INSTRUMENTATION_POINT_REALTIME(vcast_unit_stmt_bytes_9,9,1);
 return -1;}
-}
-}
-    VCAST_STATEMENT_INSTRUMENTATION_POINT_REALTIME(vcast_unit_stmt_bytes_9,9,2);
+    VCAST_STATEMENT_INSTRUMENTATION_POINT_REALTIME(vcast_unit_stmt_bytes_9,9,1);
 return a / b;
 } /*vcast_internal_start*/}/*vcast_internal_end*/
 int check_status(int temp, int voltage, int error_flag) { /*vcast_internal_start*/
@@ -884,24 +882,19 @@ if(SBF_9_2) {
   return R_9_2;
 }
 { /*vcast_internal_end*/
-    {
-{
-VCAST_STATEMENT_INSTRUMENTATION_POINT_REALTIME(vcast_unit_stmt_bytes_9,9,3);
-if ((temp > 80 || voltage < 10) && error_flag == 0) {
-VCAST_STATEMENT_INSTRUMENTATION_POINT_REALTIME(vcast_unit_stmt_bytes_9,9,4);
+    VCAST_BRANCH_INSTRUMENTATION_POINT_REALTIME(vcast_unit_branch_bytes_9,9,2,1);
+if ( VCAST_BRANCH_INSTRUMENTATION_POINT_REALTIME(vcast_unit_branch_bytes_9,9,3,(VCAST_CONDITION_TYP)((temp > 80 || voltage < 10) && error_flag == 0))) {
+VCAST_STATEMENT_INSTRUMENTATION_POINT_REALTIME(vcast_unit_stmt_bytes_9,9,2);
 return 1;}
     else {
-{
-if ((VCAST_STATEMENT_INSTRUMENTATION_POINT_REALTIME(vcast_unit_stmt_bytes_9,9,5),error_flag != 0)) {
-VCAST_STATEMENT_INSTRUMENTATION_POINT_REALTIME(vcast_unit_stmt_bytes_9,9,6);
+if ( VCAST_BRANCH_INSTRUMENTATION_POINT_REALTIME(vcast_unit_branch_bytes_9,9,4,(VCAST_CONDITION_TYP)(error_flag != 0))) {
+VCAST_STATEMENT_INSTRUMENTATION_POINT_REALTIME(vcast_unit_stmt_bytes_9,9,3);
 return 2;}
 }
-}
-}
-}
-    VCAST_STATEMENT_INSTRUMENTATION_POINT_REALTIME(vcast_unit_stmt_bytes_9,9,7);
+    VCAST_STATEMENT_INSTRUMENTATION_POINT_REALTIME(vcast_unit_stmt_bytes_9,9,4);
 return 0;
 } /*vcast_internal_start*/}/*vcast_internal_end*/
+// Test
  /*vcast_internal_start*/
 int P_9_1_1;
 int P_9_1_2;

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <coverage_data xml_testcase_version="7">
-  <unit index="9" translation_unit_index="0" coverage_type="STATEMENT" field_width="8">
+  <unit index="9" translation_unit_index="0" coverage_type="STATEMENT_BRANCH" field_width="8">
     <name>TEST_VEC</name>
     <configuration>
       <empty_statements_coverable>1</empty_statements_coverable>
       <cover_catch_as_branch>1</cover_catch_as_branch>
-      <cover_logical_operators_in_parameters>0</cover_logical_operators_in_parameters>
-      <handle_ternary_operator>0</handle_ternary_operator>
-      <cover_nested_conditional>0</cover_nested_conditional>
+      <cover_logical_operators_in_parameters>1</cover_logical_operators_in_parameters>
+      <handle_ternary_operator>1</handle_ternary_operator>
+      <cover_nested_conditional>1</cover_nested_conditional>
       <coverage_for_included_c_files>1</coverage_for_included_c_files>
       <coverage_for_headers>0</coverage_for_headers>
       <instrument_by_block>0</instrument_by_block>
@@ -32,16 +32,16 @@
       <has_ternary_operator>0</has_ternary_operator>
       <has_nested_ternary_operator>0</has_nested_ternary_operator>
       <has_constant_branch>0</has_constant_branch>
-      <number_ascii_bytes>48</number_ascii_bytes>
+      <number_ascii_bytes>192</number_ascii_bytes>
       <probe_point_after_last_include>14</probe_point_after_last_include>
       <probe_point_beginning_of_file>8</probe_point_beginning_of_file>
-      <probe_point_end_of_file>23</probe_point_end_of_file>
-      <file_timestamp>1794440740</file_timestamp>
-      <file_checksum>2787267397</file_checksum>
-      <translation_unit_checksum>3337076332</translation_unit_checksum>
+      <probe_point_end_of_file>25</probe_point_end_of_file>
+      <file_timestamp>1794460151</file_timestamp>
+      <file_checksum>1385293010</file_checksum>
+      <translation_unit_checksum>1220274205</translation_unit_checksum>
     </attributes>
     <source_files>
-      <source_file index="0" file_index="0" path="c:/vcast/environments/test_vec/test_vec.c" crc_checksum="2787267397" sha_checksum="d22f63436598c08d734c7890341e513e7126bfec" timestamp="1794440740" lis_file_path="C:\VCAST\Environments\Test_Vector\build\2035200888\TEST_VEC\B0000009.LIS"/>
+      <source_file index="0" file_index="0" path="c:/vcast/environments/test_vec/test_vec.c" crc_checksum="1385293010" sha_checksum="1fe156379a6c084038524850dcb2a0ece6b84af9" timestamp="1794460151" lis_file_path="C:\VCAST\Environments\Test_Vector\build\2035200888\TEST_VEC\B0000009.LIS"/>
     </source_files>
     <template_function_prototypes/>
     <subprogram index="1">
@@ -52,9 +52,10 @@
       <source_function_checksum>2708422626</source_function_checksum>
       <translation_unit_function_checksum>2708422626</translation_unit_function_checksum>
       <lines>
-        <line type="Statement" number="1" id="1" stmt_id="2" startline="3" startcol="5" endline="3" endcol="15" tustartline="15" tustartcol="5" tuendline="15" tuendcol="15" allowed_position="0"/>
-        <line type="Statement" number="2" id="2" stmt_id="4" startline="3" startcol="17" endline="3" endcol="26" tustartline="15" tustartcol="17" tuendline="15" tuendcol="26" allowed_position="0"/>
-        <line type="Statement" number="3" id="3" stmt_id="5" startline="4" startcol="5" endline="4" endcol="17" tustartline="16" tustartcol="5" tuendline="16" tuendcol="17" allowed_position="0"/>
+        <line type="Branch" number="0" conditions="1" condition_value="1" is_function_entry="1" id="1" stmt_id="0" startline="2" startcol="26" endline="2" endcol="26" tustartline="14" tustartcol="26" tuendline="14" tuendcol="26" allowed_position="3"/>
+        <line type="Branch" number="1" conditions="2" id="2" stmt_id="1" startline="3" startcol="5" endline="3" endcol="15" tustartline="15" tustartcol="5" tuendline="15" tuendcol="15" allowed_position="0"/>
+        <line type="Statement" number="2" id="1" stmt_id="5" startline="3" startcol="17" endline="3" endcol="26" tustartline="15" tustartcol="17" tuendline="15" tuendcol="26" allowed_position="0"/>
+        <line type="Statement" number="3" id="2" stmt_id="7" startline="4" startcol="5" endline="4" endcol="17" tustartline="16" tustartcol="5" tuendline="16" tuendcol="17" allowed_position="0"/>
       </lines>
       <startline>14</startline>
       <startcol>26</startcol>
@@ -73,6 +74,9 @@
         <coverage coverage_type="STATEMENT">
           <total>3</total>
         </coverage>
+        <coverage coverage_type="BRANCH">
+          <total>3</total>
+        </coverage>
       </metrics>
     </subprogram>
     <subprogram index="2">
@@ -83,11 +87,12 @@
       <source_function_checksum>3789864365</source_function_checksum>
       <translation_unit_function_checksum>3789864365</translation_unit_function_checksum>
       <lines>
-        <line type="Statement" number="1" id="4" stmt_id="2" startline="7" startcol="5" endline="7" endcol="55" tustartline="19" tustartcol="5" tuendline="19" tuendcol="55" allowed_position="0"/>
-        <line type="Statement" number="2" id="5" stmt_id="4" startline="7" startcol="57" endline="7" endcol="65" tustartline="19" tustartcol="57" tuendline="19" tuendcol="65" allowed_position="0"/>
-        <line type="Statement" number="3" id="6" stmt_id="7" startline="8" startcol="10" endline="8" endcol="29" tustartline="20" tustartcol="10" tuendline="20" tuendcol="29" allowed_position="0"/>
-        <line type="Statement" number="4" id="7" stmt_id="9" startline="8" startcol="31" endline="8" endcol="39" tustartline="20" tustartcol="31" tuendline="20" tuendcol="39" allowed_position="0"/>
-        <line type="Statement" number="5" id="8" stmt_id="10" startline="9" startcol="5" endline="9" endcol="13" tustartline="21" tustartcol="5" tuendline="21" tuendcol="13" allowed_position="0"/>
+        <line type="Branch" number="0" conditions="1" condition_value="1" is_function_entry="1" id="3" stmt_id="0" startline="6" startcol="57" endline="6" endcol="57" tustartline="18" tustartcol="57" tuendline="18" tuendcol="57" allowed_position="3"/>
+        <line type="Branch" number="1" conditions="2" id="4" stmt_id="1" startline="7" startcol="5" endline="7" endcol="55" tustartline="19" tustartcol="5" tuendline="19" tuendcol="55" allowed_position="0"/>
+        <line type="Statement" number="2" id="3" stmt_id="5" startline="7" startcol="57" endline="7" endcol="65" tustartline="19" tustartcol="57" tuendline="19" tuendcol="65" allowed_position="0"/>
+        <line type="Branch" number="3" conditions="2" id="5" stmt_id="9" startline="8" startcol="10" endline="8" endcol="29" tustartline="20" tustartcol="10" tuendline="20" tuendcol="29" allowed_position="0"/>
+        <line type="Statement" number="4" id="4" stmt_id="13" startline="8" startcol="31" endline="8" endcol="39" tustartline="20" tustartcol="31" tuendline="20" tuendcol="39" allowed_position="0"/>
+        <line type="Statement" number="5" id="5" stmt_id="15" startline="9" startcol="5" endline="9" endcol="13" tustartline="21" tustartcol="5" tuendline="21" tuendcol="13" allowed_position="0"/>
       </lines>
       <startline>18</startline>
       <startcol>57</startcol>
@@ -104,6 +109,9 @@
       <metrics>
         <complexity>3</complexity>
         <coverage coverage_type="STATEMENT">
+          <total>5</total>
+        </coverage>
+        <coverage coverage_type="BRANCH">
           <total>5</total>
         </coverage>
       </metrics>
