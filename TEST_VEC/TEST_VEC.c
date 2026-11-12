@@ -8,3 +8,5 @@ int check_status(int temp, int voltage, int error_flag) {
     else if (error_flag != 0) return 2;
     return 0;
 }
+
+// Test
