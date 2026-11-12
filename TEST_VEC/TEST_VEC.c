@@ -1,6 +1,6 @@
 #include "TEST_VEC.h"
 int divide(int a, int b) {
-    if (b == 0) return -1;
+    if (b == 0) return -999;
     return a / b;
 }
 int check_status(int temp, int voltage, int error_flag) {
