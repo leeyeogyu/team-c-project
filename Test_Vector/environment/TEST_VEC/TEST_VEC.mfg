@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manage-config-options version="7">
+  <config>
+    <key>COVERAGE_TYPE</key>
+    <value>STATEMENT</value>
+  </config>
+  <search-directory type="TESTABLE_SOURCE_DIR">$(VCAST_SourceRoot)\TEST_VEC</search-directory>
+</manage-config-options>

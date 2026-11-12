@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<basis_paths xml_basis_paths_version="1.0" basis_paths="FALSE" edg="Y" checksum="3337076332" handle_ternary="N" handle_nested_ternary="N" cover_declarations="Y" cover_headers="N" basis_paths_for_constant_branches="Y">
+  <subprogram index="1" name="divide" parameterized="divide(int,int)int" canonical="" mangled="divide" is_virtual_function="0" class_member="FALSE" testable="TRUE">
+    <listing_start>2</listing_start>
+    <listing_end>7</listing_end>
+  </subprogram>
+  <subprogram index="2" name="check_status" parameterized="check_status(int,int,int)int" canonical="" mangled="check_status" is_virtual_function="0" class_member="FALSE" testable="TRUE">
+    <listing_start>7</listing_start>
+    <listing_end>15</listing_end>
+  </subprogram>
+</basis_paths>

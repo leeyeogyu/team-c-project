@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE testcase_data>
+<testcase_data xml_testcase_version="2.0">
+  <compound>
+    <name>&lt;&lt;COMPOUND&gt;&gt;</name>
+    <testcase index="1">
+      <name>TEST_VEC_R_FTC_001</name>
+      <unique_id>6</unique_id>
+    </testcase>
+    <testcase index="2">
+      <name>TEST_VEC_R_FTC_002</name>
+      <unique_id>7</unique_id>
+    </testcase>
+    <testcase index="3">
+      <name>TEST_VEC_R_FTC_003</name>
+      <unique_id>8</unique_id>
+    </testcase>
+    <testcase index="4">
+      <name>TEST_VEC_R_FTC_004</name>
+      <unique_id>9</unique_id>
+    </testcase>
+    <testcase index="5">
+      <name>TEST_VEC_R_FTC_005</name>
+      <unique_id>10</unique_id>
+    </testcase>
+  </compound>
+  <init>
+    <name>&lt;&lt;INIT&gt;&gt;</name>
+  </init>
+  <unit index="9" coverage_type="Statement">
+    <name>TEST_VEC</name>
+    <subprogram index="1">
+      <name>divide</name>
+      <testcase index="1">
+        <name>TEST_VEC_R_FTC_001</name>
+        <unique_id>4</unique_id>
+      </testcase>
+      <testcase index="2">
+        <name>TEST_VEC_R_FTC_002</name>
+        <unique_id>5</unique_id>
+      </testcase>
+    </subprogram>
+    <subprogram index="2">
+      <name>check_status</name>
+      <testcase index="1">
+        <name>TEST_VEC_R_FTC_003</name>
+        <unique_id>1</unique_id>
+      </testcase>
+      <testcase index="2">
+        <name>TEST_VEC_R_FTC_004</name>
+        <unique_id>2</unique_id>
+      </testcase>
+      <testcase index="3">
+        <name>TEST_VEC_R_FTC_005</name>
+        <unique_id>3</unique_id>
+      </testcase>
+    </subprogram>
+  </unit>
+</testcase_data>

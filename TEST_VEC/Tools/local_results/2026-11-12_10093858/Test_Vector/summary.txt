@@ -1,0 +1,5 @@
+Environment / Result / Manage status line (TESTCASES = passed/run)
+TEST_VEC / PASS / TOTALS       1/1 (100%) 00:17      5/5 (100%) 5/5 (100%) 00:05        8/8 (100%)
+
+Manage status for the whole project:
+  TOTALS 1/1 (100%) 00:17      5/5 (100%) 5/5 (100%) 00:05        8/8 (100%)

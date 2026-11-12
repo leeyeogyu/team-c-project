@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<paramfile version="1">
+  <source_file index="1">
+    <path>C:/VCAST/Environments/Test_Vector/build/2035200888/TEST_VEC/S0000008.c</path>
+    <type>C_FILE</type>
+  </source_file>
+  <source_file index="2">
+    <path>C:/VCAST/Environments/TEST_VEC/TEST_VEC.c</path>
+    <type>C_FILE</type>
+  </source_file>
+  <unit name="USER_GLOBALS_VCAST" index="8" sbf="0" unit_description="Not Stubbed Unit">
+    <source_file index="1">
+      <path>C:/VCAST/Environments/Test_Vector/build/2035200888/TEST_VEC/S0000008.c</path>
+      <type>C_FILE</type>
+    </source_file>
+    <global name="VECTORCAST_INT1" index="1" typeid="800001"/>
+    <global name="VECTORCAST_INT2" index="2" typeid="800001"/>
+    <global name="VECTORCAST_INT3" index="3" typeid="800001"/>
+    <global name="VECTORCAST_FLT1" index="4" typeid="800002"/>
+    <global name="VECTORCAST_STR1" index="5" typeid="100001"/>
+    <global name="VECTORCAST_BUFFER" index="6" typeid="100002"/>
+  </unit>
+  <unit name="TEST_VEC" index="9" sbf="1" unit_description="UUT">
+    <source_file index="2">
+      <path>C:/VCAST/Environments/TEST_VEC/TEST_VEC.c</path>
+      <type>C_FILE</type>
+    </source_file>
+    <subprog name="divide" index="1" mangled="divide" parameterization="(int,int)int">
+      <param name="a" index="1" typeid="900001" orig_type="int"/>
+      <param name="b" index="2" typeid="900001" orig_type="int"/>
+      <param name="return" index="3" typeid="900001" orig_type="int"/>
+      <source_file index="2"/>
+      <sbf index="4" obj_name="SBF_9_1"/>
+    </subprog>
+    <subprog name="check_status" index="2" mangled="check_status" parameterization="(int,int,int)int">
+      <param name="temp" index="1" typeid="900001" orig_type="int"/>
+      <param name="voltage" index="2" typeid="900001" orig_type="int"/>
+      <param name="error_flag" index="3" typeid="900001" orig_type="int"/>
+      <param name="return" index="4" typeid="900001" orig_type="int"/>
+      <source_file index="2"/>
+      <sbf index="5" obj_name="SBF_9_2"/>
+    </subprog>
+  </unit>
+  <unit name="uut_prototype_stubs" index="10" sbf="0" unit_description="Stubbed Unit"/>
+  <environment_exceptions/>
+</paramfile>

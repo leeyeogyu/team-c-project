@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<changeset checksum="3337076332">
+  <modification id="0">
+    <kind>ADD_TEXT_AFTER</kind>
+    <pos description="FUNCTION_BODY_OPEN" function="divide">
+      <line>14</line>
+      <col>26</col>
+    </pos>
+    <text> /*vcast_internal_start*/
+extern int P_9_1_1;
+extern int P_9_1_2;
+extern int R_9_1;
+extern unsigned char SBF_9_1;
+if(SBF_9_1) {
+  vCAST_USER_CODE_TIMER_STOP();
+#define BEGINNING_OF_STUB_USER_CODE_9_2208222536
+#include "vcast_configure_stub.c"
+#undef BEGINNING_OF_STUB_USER_CODE_9_2208222536
+  if ( vcast_is_in_driver ) {
+    P_9_1_1 = a;
+    P_9_1_2 = b;
+    vCAST_COMMON_STUB_PROC_9( 9, 1, 3, 0 );
+  } /* vcast_is_in_driver */
+#define END_OF_STUB_USER_CODE_9_2208222536
+#include "vcast_configure_stub.c"
+#undef END_OF_STUB_USER_CODE_9_2208222536
+  vCAST_USER_CODE_TIMER_START();
+  return R_9_1;
+}
+{ /*vcast_internal_end*/
+</text>
+  </modification>
+  <modification id="1">
+    <kind>ADD_TEXT_AFTER</kind>
+    <pos description="FUNCTION_BODY_CLOSE" function="divide">
+      <line>17</line>
+      <col>1</col>
+    </pos>
+    <text> /*vcast_internal_start*/}/*vcast_internal_end*/
+</text>
+  </modification>
+  <modification id="2">
+    <kind>ADD_TEXT_BEFORE</kind>
+    <pos description="UNIT_APPENDIX_START">
+      <line>25</line>
+      <col>1</col>
+    </pos>
+    <text> /*vcast_internal_start*/
+int P_9_1_1;
+int P_9_1_2;
+int R_9_1;
+unsigned char SBF_9_1 = 0;
+
+/*vcast_internal_end*/
+</text>
+  </modification>
+  <modification id="3">
+    <kind>ADD_TEXT_AFTER</kind>
+    <pos description="FUNCTION_BODY_OPEN" function="check_status">
+      <line>18</line>
+      <col>57</col>
+    </pos>
+    <text> /*vcast_internal_start*/
+extern int P_9_2_1;
+extern int P_9_2_2;
+extern int P_9_2_3;
+extern int R_9_2;
+extern unsigned char SBF_9_2;
+if(SBF_9_2) {
+  vCAST_USER_CODE_TIMER_STOP();
+#define BEGINNING_OF_STUB_USER_CODE_9_250649779
+#include "vcast_configure_stub.c"
+#undef BEGINNING_OF_STUB_USER_CODE_9_250649779
+  if ( vcast_is_in_driver ) {
+    P_9_2_1 = temp;
+    P_9_2_2 = voltage;
+    P_9_2_3 = error_flag;
+    vCAST_COMMON_STUB_PROC_9( 9, 2, 4, 0 );
+  } /* vcast_is_in_driver */
+#define END_OF_STUB_USER_CODE_9_250649779
+#include "vcast_configure_stub.c"
+#undef END_OF_STUB_USER_CODE_9_250649779
+  vCAST_USER_CODE_TIMER_START();
+  return R_9_2;
+}
+{ /*vcast_internal_end*/
+</text>
+  </modification>
+  <modification id="4">
+    <kind>ADD_TEXT_AFTER</kind>
+    <pos description="FUNCTION_BODY_CLOSE" function="check_status">
+      <line>22</line>
+      <col>1</col>
+    </pos>
+    <text> /*vcast_internal_start*/}/*vcast_internal_end*/
+</text>
+  </modification>
+  <modification id="5">
+    <kind>ADD_TEXT_BEFORE</kind>
+    <pos description="UNIT_APPENDIX_START">
+      <line>25</line>
+      <col>1</col>
+    </pos>
+    <text> /*vcast_internal_start*/
+int P_9_2_1;
+int P_9_2_2;
+int P_9_2_3;
+int R_9_2;
+unsigned char SBF_9_2 = 0;
+
+/*vcast_internal_end*/
+</text>
+  </modification>
+</changeset>

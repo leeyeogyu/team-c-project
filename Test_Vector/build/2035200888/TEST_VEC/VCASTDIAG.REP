@@ -1,0 +1,317 @@
+
+###################################
+############# MISC ################
+###################################
+Tool version: 24.sp1 (04/03/24)
+Current directory: c:\VCAST\Environments\Test_Vector\build\2035200888\TEST_VEC
+Current directory is writable.
+
+--------------------------------------------------------------------------------
+Environment Overview
+--------------------------------------------------------------------------------
+  Environment Name:    TEST_VEC
+  Environment Status:  Normal
+  Environment Version: REVISION_2023_STDOUT_MODE_NO_LENGTH_PREFIX
+  Environment Build Type: Full
+  Coverage Status:     Statement (enabled)
+  Language:            C
+  Compiler Name:       VectorCAST MinGW (C)
+  White Box:           Yes
+  Search List:         $(VCAST_SourceRoot)\TEST_VEC  (testable)
+  Units Under Test:    TEST_VEC
+  Stub List:           None
+  Stub None (Source Files): None
+###################################
+
+###################################
+### COMPILER/PREPROCESSOR/LINKER ##
+###################################
+Found preprocessor C:\VCAST\MinGW\bin\gcc.exe
+Found compiler C:\VCAST\MinGW\bin\gcc.exe
+###################################
+
+
+
+###################################
+############ ENV. VARS ############
+###################################
+ALLUSERSPROFILE=C:\ProgramData
+ANS=4
+ANYFAIL=0
+APPDATA=C:\Users\gangn\AppData\Roaming
+ASK=1
+BUILDFAIL=0
+CLICAST=C:\VCAST\clicast.exe
+COMMONPROGRAMFILES=C:\Program Files\Common Files
+COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files
+COMMONPROGRAMW6432=C:\Program Files\Common Files
+COMP=VectorCAST_MinGW_C
+COMPUTERNAME=JUNSU_PC
+COMSPEC=C:\WINDOWS\system32\cmd.exe
+DEFROOT=C:\Users\gangn\Downloads
+DRIVERDATA=C:\Windows\System32\Drivers\DriverData
+E=TEST_VEC
+EFC_6188_1592913036=1
+EFC_6188_2946480783=1
+EFC_6188_344590478=1
+EFC_6188_4126798990=1
+GCCEXE=C:\VCAST\MinGW\bin\gcc.exe
+GCCVER=10.2.0
+GCC_DIR=C:\VCAST\MinGW\bin
+GO=y
+HIT=4
+HOMEDRIVE=C:
+HOMEPATH=\Users\gangn
+ISGCC=1
+JAVA_HOME=C:\Program Files\Eclipse Adoptium\jdk-21.0.13.9-hotspot\
+LM_APP_DISABLE_CACHE_READ=1
+LOCALAPPDATA=C:\Users\gangn\AppData\Local
+LOGONSERVER=\\JUNSU_PC
+MANAGE=C:\VCAST\manage.exe
+MODE=1
+NSUITE=1
+NUMBER_OF_PROCESSORS=28
+OLD=C:\VCAST\Environments\Test_Vector\build\2035200888
+ONEDRIVE=C:\Users\gangn\OneDrive
+ONEDRIVECONSUMER=C:\Users\gangn\OneDrive
+OS=Windows_NT
+OUT=C:\Users\gangn\Downloads\local_results\2026-11-12_10093858\Test_Vector
+OUTROOT=C:\Users\gangn\Downloads\local_results\2026-11-12_10093858
+PATH=C:\VCAST\MinGW\bin;C:\VCAST\MinGW\bin;C:\VCAST\MinGW\bin;C:\Program Files\Eclipse Adoptium\jdk-21.0.13.9-hotspot\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\gcc\bin;C:\Program Files\Git\cmd;C:\Users\gangn\.local\bin;C:\Users\gangn\AppData\Local\Microsoft\WindowsApps;C:\Users\gangn\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\gangn\AppData\Local\Programs\Microsoft VS Code\bin\copilot-shim;C:\Users\gangn\AppData\Local\Programs\Ollama
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+PCOUNT=1
+PN=4
+PNAME_1=HKMC_BLTN_CAM_IT_3RD
+PNAME_2=HKMC_BLTN_CAM_RS4
+PNAME_3=HKMC_BLTN_CAM_SX3
+PNAME_4=Test_Vector
+PROCESSOR_ARCHITECTURE=AMD64
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 183 Stepping 1, GenuineIntel
+PROCESSOR_LEVEL=6
+PROCESSOR_REVISION=b701
+PROGRAMDATA=C:\ProgramData
+PROGRAMFILES=C:\Program Files
+PROGRAMFILES(X86)=C:\Program Files (x86)
+PROGRAMW6432=C:\Program Files
+PROJ=Test_Vector
+PROMPT=$P$G
+PSEL= 4
+PSMODULEPATH=C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+PUBLIC=C:\Users\Public
+PWD=C:/VCAST/Environments/Test_Vector/build/2035200888
+ROOT=C:\VCAST\Environments
+SEL= TEST_VEC
+SELF=run_build_and_test_multi_gcc.bat
+SESSIONNAME=Console
+STAMP=2026-11-12_10093858
+SUITE=TestSuite
+SYSTEMDRIVE=C:
+SYSTEMROOT=C:\WINDOWS
+TC_TIMEOUT=120
+TEMP=C:\Users\gangn\AppData\Local\Temp
+TMP=C:\Users\gangn\AppData\Local\Temp
+TOKEN=4
+USERDOMAIN=JUNSU_PC
+USERDOMAIN_ROAMINGPROFILE=JUNSU_PC
+USERNAME=gangn
+USERPROFILE=C:\Users\gangn
+VC=C:\VCAST
+VCAST_MANAGE_PROJECT_DIRECTORY=C:\VCAST\Environments\Test_Vector
+VCAST_OBJECT_FILES=B0000001.o B0000002.o S0000003.o B0000008.o B0000004.o  B0000007.o  B1_switch.o  B4_switch.o  S3_switch.o   I0000009.o
+VCAST_OBJECT_PATH=c:\\VCAST\\Environments\\Test_Vector\\build\\2035200888\\TEST_VEC
+VCAST_SOURCEROOT=C:/VCAST/Environments
+VCM=C:\VCAST\Environments\Test_Vector.vcm
+VCM_1=C:\VCAST\Environments\HKMC_BLTN_CAM_IT_3RD.vcm
+VCM_2=C:\VCAST\Environments\HKMC_BLTN_CAM_RS4.vcm
+VCM_3=C:\VCAST\Environments\HKMC_BLTN_CAM_SX3.vcm
+VCM_4=C:\VCAST\Environments\Test_Vector.vcm
+VCV_ENVIRONMENT_DIR=c:\VCAST\Environments\Test_Vector\build\2035200888\TEST_VEC
+VCV_ENVIRONMENT_NAME=TEST_VEC
+VECTORCAST_DIR=C:\VCAST
+VECTOR_LICENSE_FILE=27000@172.25.7.147
+WATCH_EXE=UUT_INST
+WINDIR=C:\WINDOWS
+WORK=C:\VCAST\Environments\Test_Vector
+Z3_LIBRARY_PATH=C:/VCAST/python/3rd_party/z3
+
+###################################
+
+
+###################################
+######## MISSING BINARIES #########
+###################################
+none
+###################################
+
+
+###################################
+########## CONFIG FILES ###########
+###################################
+CCAST Options read from file:
+(exists) c:\VCAST\Environments\Test_Vector\build\2035200888\CCAST_.CFG (current dir)
+Contents of c:\VCAST\Environments\Test_Vector\build\2035200888\CCAST_.CFG:
+  ASSEMBLER_CMD: 
+  AUTO_INCLUDE: 
+  COMREADER_ENABLED: FALSE
+  COVERAGE_TYPE: Statement
+  C_ALT_COMPILE_CMD: 
+  C_ALT_EDG_FLAGS: 
+  C_ALT_PREPROCESS_CMD: 
+  C_COMPILER_CFG_SOURCE: PY_CONFIGURATOR
+  C_COMPILER_FAMILY_NAME: GNU_Native
+  C_COMPILER_HIERARCHY_STRING: VectorCAST MinGW (C)
+  C_COMPILER_OUTPUT_FLAG: -o
+  C_COMPILER_PY_ARGS: --lang c --version Built-in-MinGW
+  C_COMPILER_TAG: BUILTIN_MINGW_C
+  C_COMPILER_VERSION_CMD: gcc --version
+  C_COMPILE_CMD: gcc -c -g
+  C_COMPILE_CMD_FLAG: -c
+  C_COMPILE_EXCLUDE_FLAGS: -o**
+  C_DEBUG_CMD: gdb
+  C_DEBUG_HELP_FILE: 
+  C_DEFINE_FLAG: -D
+  C_DEFINE_LIST: 
+  C_EDG_FLAGS: -w --gcc --gnu_version 100200 --64_bit_target --x86_64 --mingw
+  C_EXECUTE_CMD: 
+  C_EXEC_HELP_FILE: 
+  C_INCLUDE_FLAG: -I
+  C_LINKER_VERSION_CMD: ld --version
+  C_LINK_CMD: gcc -g
+  C_LINK_OPTIONS: 
+  C_OBJECT_EXT: .o
+  C_OUTPUT_FLAG: -o
+  C_PREPROCESS_CMD: gcc -E -ftrack-macro-expansion=0 -C
+  C_PREPROCESS_FILE: 
+  EXECUTABLE_EXTENSION: 
+  MAX_VARY_RANGE: 20
+  PRECOMPILE_CMD: 
+  PRECOMPILE_EXT: 
+  SBF_LOC_MEMBER_IN_NSP: DECL_NAMESPACE
+  SBF_LOC_MEMBER_OUTSIDE_NSP: DECL_NAMESPACE
+  SBF_LOC_NONMEMBER_IN_NSP: DECL_NAMESPACE
+  SBF_LOC_NONMEMBER_OUTSIDE_NSP: DECL_NAMESPACE
+  SOURCE_EXTENSION: .c
+  SUBSTITUTE_CODE_FOR_C_FILE: FALSE
+  VCAST_ASSEMBLY_FILE_EXTENSIONS: s
+  VCAST_ASSIGN_WITHOUT_COPY_CTOR: TRUE
+  VCAST_AUTO_CLEAR_TEST_USER_CODE: FALSE
+  VCAST_AVOID_COMMA_OPERATOR: FALSE
+  VCAST_BUFFER_OUTPUT: FALSE
+  VCAST_COLLAPSE_STD_HEADERS: COLLAPSE_NONE
+  VCAST_COMMAND_LINE_DEBUGGER: TRUE
+  VCAST_COMPILER_SUPPORTS_CPP_CASTS: FALSE
+  VCAST_COVERAGE_FOR_AGGREGATE_INIT: TRUE
+  VCAST_CYGPATH_LINE_DIRECTIVES: FALSE
+  VCAST_C_FILE_EXTENSIONS: c
+  VCAST_DISABLE_CPP_EXCEPTIONS: FALSE
+  VCAST_DISABLE_STD_STRING_DETECTION: FALSE
+  VCAST_DISABLE_STD_WSTRING_DETECTION: TRUE
+  VCAST_DISABLE_TI_BITFIELD: FALSE
+  VCAST_DISABLE_TI_STRING: FALSE
+  VCAST_DUMP_BUFFER: FALSE
+  VCAST_ENVIRONMENT_FILES: 
+  VCAST_ESCAPE_LINE_DIRECTIVES: FALSE
+  VCAST_EXECUTE_WITH_STDIO: FALSE
+  VCAST_EXECUTE_WITH_STDOUT: FALSE
+  VCAST_FAR_STDIN_DATA: FALSE
+  VCAST_FILE_INDEX: FALSE
+  VCAST_FILE_PREFIX: 
+  VCAST_FORCE_ELAB_TYPE_SPEC: TRUE
+  VCAST_FORCE_NO_USERGLOBALS: FALSE
+  VCAST_GH_INTEX_CMD: 
+  VCAST_GH_INT_FILE: 
+  VCAST_GNU_SYSTEM_MARKER: TRUE
+  VCAST_HAS_LONGLONG: TRUE
+  VCAST_INST_FILE_MAX_LINES: 0
+  VCAST_MAIN: FALSE
+  VCAST_MAX_COVERED_SUBPROGRAMS: 1000
+  VCAST_MAX_HEAP_SIZE: 1000
+  VCAST_MAX_MCDC_STATEMENTS: 1000
+  VCAST_MAX_STRING_LENGTH: 1000
+  VCAST_MICROSOFT_LONG_LONG: FALSE
+  VCAST_MINIMAL_TERMINATION: FALSE
+  VCAST_NO_EXIT: FALSE
+  VCAST_NO_FFLUSH: FALSE
+  VCAST_NO_FLOAT: FALSE
+  VCAST_NO_LIMITS: FALSE
+  VCAST_NO_LONG_DOUBLE: FALSE
+  VCAST_NO_MALLOC: FALSE
+  VCAST_NO_SETJMP: FALSE
+  VCAST_NO_SIGNAL: FALSE
+  VCAST_NO_STDIN: FALSE
+  VCAST_NO_STDLIB: FALSE
+  VCAST_NO_STD_FILES: FALSE
+  VCAST_OUTPUT_BUFFER_SIZE: 20000
+  VCAST_PREPEND_TO_PATH_DIRS: $(VECTORCAST_DIR)/MinGW/bin
+  VCAST_PREPROCESS_PREINCLUDE: 
+  VCAST_REMOVE_PREPROCESSOR_COMMENTS: TRUE
+  VCAST_STDIO: FALSE
+  VCAST_TYPEOF_OPERATOR: TRUE
+  VCAST_USE_COMPOUND_FOR_BATCH: FALSE
+  VCAST_USE_EDG_PREPROCESSOR: FALSE
+  VCAST_USE_STATIC_MEMORY: FALSE
+  VCAST_USE_STD_STRING: TRUE
+  VCAST_USE_VCPP: FALSE
+  VCAST_VCDB_FLAG_STRING: -isystem=1
+  VCAST_VXWORKS: FALSE
+  VCAST_WHITEBOX_SEARCH_DIRS_ONLY: FALSE
+  WHITEBOX: YES
+
+ADACAST Options read from file:
+( none ) c:\VCAST\Environments\Test_Vector\build\2035200888\ADACAST_.CFG (current dir)
+
+###################################
+
+
+###################################
+######## ENV. VAR. CONFIG #########
+###################################
+These config options are being set by environment vars:
+none
+
+These env. vars contain VCAST and could be affecting behavior:
+CLICAST=C:\VCAST\clicast.exe
+GCCEXE=C:\VCAST\MinGW\bin\gcc.exe
+GCC_DIR=C:\VCAST\MinGW\bin
+MANAGE=C:\VCAST\manage.exe
+OLD=C:\VCAST\Environments\Test_Vector\build\2035200888
+PATH=C:\VCAST\MinGW\bin;C:\VCAST\MinGW\bin;C:\VCAST\MinGW\bin;C:\Program Files\Eclipse Adoptium\jdk-21.0.13.9-hotspot\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\gcc\bin;C:\Program Files\Git\cmd;C:\Users\gangn\.local\bin;C:\Users\gangn\AppData\Local\Microsoft\WindowsApps;C:\Users\gangn\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\gangn\AppData\Local\Programs\Microsoft VS Code\bin\copilot-shim;C:\Users\gangn\AppData\Local\Programs\Ollama
+PWD=C:/VCAST/Environments/Test_Vector/build/2035200888
+ROOT=C:\VCAST\Environments
+VC=C:\VCAST
+VCAST_MANAGE_PROJECT_DIRECTORY=C:\VCAST\Environments\Test_Vector
+VCAST_OBJECT_FILES=B0000001.o B0000002.o S0000003.o B0000008.o B0000004.o  B0000007.o  B1_switch.o  B4_switch.o  S3_switch.o   I0000009.o
+VCAST_OBJECT_PATH=c:\\VCAST\\Environments\\Test_Vector\\build\\2035200888\\TEST_VEC
+VCAST_SOURCEROOT=C:/VCAST/Environments
+VCM=C:\VCAST\Environments\Test_Vector.vcm
+VCM_1=C:\VCAST\Environments\HKMC_BLTN_CAM_IT_3RD.vcm
+VCM_2=C:\VCAST\Environments\HKMC_BLTN_CAM_RS4.vcm
+VCM_3=C:\VCAST\Environments\HKMC_BLTN_CAM_SX3.vcm
+VCM_4=C:\VCAST\Environments\Test_Vector.vcm
+VCV_ENVIRONMENT_DIR=c:\VCAST\Environments\Test_Vector\build\2035200888\TEST_VEC
+VECTORCAST_DIR=C:\VCAST
+WORK=C:\VCAST\Environments\Test_Vector
+Z3_LIBRARY_PATH=C:/VCAST/python/3rd_party/z3
+
+###################################
+
+###################################
+####### ENVIRONMENT SCRIPT ########
+###################################
+Contents of C:\VCAST\Environments\Test_Vector\build\2035200888\TEST_VEC.env:
+  ENVIRO.NEW
+  ENVIRO.NAME:TEST_VEC
+  ENVIRO.STUB_BY_FUNCTION:TEST_VEC
+  ENVIRO.MAX_VARY_RANGE: 20
+  ENVIRO.STUB: ALL_BY_PROTOTYPE
+  ENVIRO.TYPE_HANDLED_DIRS_ALLOWED:
+  ENVIRO.LIBRARY_STUBS:
+  ENVIRO.COVERAGE_TYPE: STATEMENT
+  ENVIRO.WHITE_BOX: YES
+  ENVIRO.BASE_DIRECTORY: VCAST_SourceRoot=C:/VCAST/Environments
+  ENVIRO.SEARCH_LIST: $(VCAST_SourceRoot)\TEST_VEC
+  ENVIRO.END
+
+###################################
+
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typefile version="1">
+  <type typeid="100001" typetype="STR_ING" array_type="800003" string_type_type="AR_RAY" typemark="CCAST_8_1" original_type_name="char [8]">
+    <range_data size="8%%"/>
+  </type>
+  <type typeid="100002" typetype="AR_RAY" array_type="800001" typemark="CCAST_8_2" original_type_name="int [4]">
+    <range_data size="4%%"/>
+  </type>
+  <type typeid="800001" typetype="INT_EGER" typemark="int">
+    <range_data min="-2147483648" mid="-1" max="2147483647"/>
+  </type>
+  <type typeid="800002" typetype="FL_OAT" typemark="float">
+    <range_data min="-3.40282e+38" mid="0" max="3.40282e+38"/>
+  </type>
+  <type typeid="800003" typetype="CHAR_ACTER" typemark="char">
+    <range_data min="-128" mid="-1" max="127"/>
+  </type>
+  <type typeid="900001" typetype="INT_EGER" typemark="int">
+    <range_data min="-2147483648" mid="-1" max="2147483647"/>
+  </type>
+</typefile>

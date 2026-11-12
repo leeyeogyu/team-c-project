@@ -1,0 +1,20 @@
+--------------------------------------------------------------------------------
+Environment Overview
+--------------------------------------------------------------------------------
+
+
+
+
+  Environment Name:    TEST_VEC
+  Environment Status:  Normal
+  Environment Version: REVISION_2023_STDOUT_MODE_NO_LENGTH_PREFIX
+  Environment Build Type: Full
+  Coverage Status:     Statement (enabled)
+  Language:            C
+  Compiler Name:       VectorCAST MinGW (C)
+  White Box:           Yes
+  Search List:         $(VCAST_SourceRoot)\TEST_VEC  (testable)
+  Units Under Test:    TEST_VEC
+  Stub List:           None
+  Stub None (Source Files): None
+

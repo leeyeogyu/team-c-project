@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<env_info>
+  <needed_entities>
+    <unit id="9">
+      <function id="divide" name="divide" defined="1" const="0" file="1" return="int">
+        <parameters>
+          <parameter type="int" name="a"/>
+          <parameter type="int" name="b"/>
+        </parameters>
+      </function>
+      <function id="check_status" name="check_status" defined="1" const="0" file="1" return="int">
+        <parameters>
+          <parameter type="int" name="temp"/>
+          <parameter type="int" name="voltage"/>
+          <parameter type="int" name="error_flag"/>
+        </parameters>
+      </function>
+    </unit>
+  </needed_entities>
+  <files>
+    <file id="1">C:/VCAST/Environments/TEST_VEC/TEST_VEC.c</file>
+  </files>
+</env_info>

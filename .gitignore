@@ -1,0 +1,4 @@
+Test_Vector/lock/
+Test_Vector/logs/
+*.bak
+*.tmp

@@ -1,0 +1,70 @@
+COMMAND: C:\VCAST\clicast.exe -e TEST_VEC -l C execute batch
+DIRECTORY: C:/VCAST/Environments/Test_Vector/build/2035200888
+TIME: 2026-11-12 10:10:09
+TEST SUITE: VectorCAST_MinGW_C/TestSuite
+-----------------------------Process Environment------------------------------
+SYSTEMROOT=C:\WINDOWS
+COMSPEC=C:\WINDOWS\system32\cmd.exe
+COMMONPROGRAMFILES=C:\Program Files\Common Files
+COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files
+PATH=C:\VCAST\MinGW\bin;C:\Program Files\Eclipse Adoptium\jdk-21.0.13.9-hotspot\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\gcc\bin;C:\Program Files\Git\cmd;C:\Users\gangn\.local\bin;C:\Users\gangn\AppData\Local\Microsoft\WindowsApps;C:\Users\gangn\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\gangn\AppData\Local\Programs\Microsoft VS Code\bin\copilot-shim;C:\Users\gangn\AppData\Local\Programs\Ollama
+SYSTEMDRIVE=C:
+VCAST_MANAGE_PROJECT_DIRECTORY=C:\VCAST\Environments\Test_Vector
+ONEDRIVECONSUMER=C:\Users\gangn\OneDrive
+DRIVERDATA=C:\Windows\System32\Drivers\DriverData
+ONEDRIVE=C:\Users\gangn\OneDrive
+PSMODULEPATH=C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+WINDIR=C:\WINDOWS
+COMMONPROGRAMW6432=C:\Program Files\Common Files
+PROGRAMFILES(X86)=C:\Program Files (x86)
+PROGRAMFILES=C:\Program Files
+PROGRAMDATA=C:\ProgramData
+PROGRAMW6432=C:\Program Files
+VCAST_SOURCEROOT=C:/VCAST/Environments
+---------------------------End Process Environment----------------------------
+VectorCAST Copyright (C) 1993 - 2026
+**Version 24.sp1 (04/03/24)
+    Processing options file c:\VCAST\Environments\Test_Vector\build\2035200888\CCAST_.CFG
+    Opening Environment
+    Opening Parameter/Global File
+    Opening Types File
+    Environment is Open
+    Running all <<COMPOUND>> test cases
+    Running: TEST_VEC_R_FTC_001
+    Preparing Test Data
+    Running Test Case
+    Running Test with command: c:\VCAST\Environments\Test_Vector\build\2035200888\TEST_VEC\UUT_INST.EXE
+    Processing Execution Data
+    Updating Coverage Data
+    Test Execution Complete
+    Running: TEST_VEC_R_FTC_002
+    Preparing Test Data
+    Running Test Case
+    Running Test with command: c:\VCAST\Environments\Test_Vector\build\2035200888\TEST_VEC\UUT_INST.EXE
+    Processing Execution Data
+    Updating Coverage Data
+    Test Execution Complete
+    Running: TEST_VEC_R_FTC_003
+    Preparing Test Data
+    Running Test Case
+    Running Test with command: c:\VCAST\Environments\Test_Vector\build\2035200888\TEST_VEC\UUT_INST.EXE
+    Processing Execution Data
+    Updating Coverage Data
+    Test Execution Complete
+    Running: TEST_VEC_R_FTC_004
+    Preparing Test Data
+    Running Test Case
+    Running Test with command: c:\VCAST\Environments\Test_Vector\build\2035200888\TEST_VEC\UUT_INST.EXE
+    Processing Execution Data
+    Updating Coverage Data
+    Test Execution Complete
+    Running: TEST_VEC_R_FTC_005
+    Preparing Test Data
+    Running Test Case
+    Running Test with command: c:\VCAST\Environments\Test_Vector\build\2035200888\TEST_VEC\UUT_INST.EXE
+    Processing Execution Data
+    Updating Coverage Data
+    Test Execution Complete
+    Running all TEST_VEC.divide test cases
+    Running all TEST_VEC.check_status test cases
+    Completed Batch Execution processing

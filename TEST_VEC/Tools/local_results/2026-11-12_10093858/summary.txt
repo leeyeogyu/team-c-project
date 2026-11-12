@@ -1,0 +1,4 @@
+Project / Environment / Result / Manage status line (TESTCASES = passed/run)
+Test_Vector / TEST_VEC / PASS / TOTALS       1/1 (100%) 00:17      5/5 (100%) 5/5 (100%) 00:05        8/8 (100%)
+
+Per project: C:\Users\gangn\Downloads\local_results\2026-11-12_10093858\<project>\summary.txt and reports\

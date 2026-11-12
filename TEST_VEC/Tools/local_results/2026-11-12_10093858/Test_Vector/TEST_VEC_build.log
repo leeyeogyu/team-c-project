@@ -1,0 +1,117 @@
+COMMAND: C:/VCAST/enviroedg.exe C:/VCAST/Environments/Test_Vector/build/2035200888/TEST_VEC.env
+DIRECTORY: C:/VCAST/Environments/Test_Vector/build/2035200888
+TIME: 2026-11-12 10:09:43
+TEST SUITE: VectorCAST_MinGW_C/TestSuite
+**Environment Builder Version 24.sp1 (04/03/24)
+    Processing options file c:\VCAST\Environments\Test_Vector\build\2035200888\CCAST_.CFG
+    Reading environment script "C:/VCAST/Environments/Test_Vector/build/2035200888/TEST_VEC.env"
+    Initializing search list
+    Creating the Environment Directory
+    Creating Environment "TEST_VEC"
+    Unit 8 (not-stubbed): User Defined Globals
+       Parsing 
+       Initializing parse data
+       Generating harness code
+       Saving unit data
+    Parsing TEST_VEC
+    Unit 9 (stub-by-function): TEST_VEC
+       Loading stored IL
+       Initializing parse data
+       Generating harness code
+       Saving unit data
+    Compiling file VECTORCAST_IO
+    Compiling file User Defined Globals
+    Compiling file Data File Number 1
+    Compiling file Data File Number 2
+    Compiling file Driver
+    Compiling file User Defined Package
+    Setting Up Statement Coverage
+    Instrumenting file TEST_VEC
+    Creating expanded header information for TEST_VEC
+    Compiling file TEST_VEC
+    Compiling file Data File Number 1
+    Linking Instrumented Harness
+    Coverage Initialized
+    Writing VectorCAST Database Files to Disk
+    Environment built Successfully
+COMMAND: C:\VCAST\clicast.exe -e TEST_VEC -l C test script convert C:/VCAST/Environments/Test_Vector/build/2035200888/TEST_VEC.tst.tmp
+DIRECTORY: C:/VCAST/Environments/Test_Vector/build/2035200888
+TIME: 2026-11-12 10:09:50
+TEST SUITE: VectorCAST_MinGW_C/TestSuite
+VectorCAST Copyright (C) 1993 - 2026
+**Version 24.sp1 (04/03/24)
+    Processing options file c:\VCAST\Environments\Test_Vector\build\2035200888\CCAST_.CFG
+    Opening Environment
+    Determining Size/Range Information
+    Opening Parameter/Global File
+    Opening Types File
+    Running Test with command: c:\VCAST\Environments\Test_Vector\build\2035200888\TEST_VEC\UUT_INST.EXE
+    Building Master Min Mid Max data.
+    Opening Parameter/Global File
+    Opening Types File
+    Environment is Open
+    Processing Script File
+    Processing script line 50
+    Script Creation Completed
+--------------------------------------------------------------------------------
+Test Script Log
+--------------------------------------------------------------------------------
+(I) @LINE: 1
+    >>> Opening script file C:\VCAST\Environments\Test_Vector\build\2035200888\TEST_VEC.tst.tmp
+(I) @LINE: 25
+    >>> Processing Test Case: TEST_VEC_R_FTC_003
+(S) @LINE: 30
+    >>> Processed Test Case: TEST_VEC_R_FTC_003
+(I) @LINE: 36
+    >>> Processing Test Case: TEST_VEC_R_FTC_004
+(S) @LINE: 40
+    >>> Processed Test Case: TEST_VEC_R_FTC_004
+(I) @LINE: 46
+    >>> Processing Test Case: TEST_VEC_R_FTC_005
+(S) @LINE: 52
+    >>> Processed Test Case: TEST_VEC_R_FTC_005
+(I) @LINE: 60
+    >>> Processing Test Case: TEST_VEC_R_FTC_001
+(S) @LINE: 63
+    >>> Processed Test Case: TEST_VEC_R_FTC_001
+(I) @LINE: 69
+    >>> Processing Test Case: TEST_VEC_R_FTC_002
+(S) @LINE: 73
+    >>> Processed Test Case: TEST_VEC_R_FTC_002
+(I) @LINE: 79
+    >>> Processing Test Case: TEST_VEC_R_FTC_001
+(S) @LINE: 81
+    >>> Processed Test Case: TEST_VEC_R_FTC_001
+(I) @LINE: 88
+    >>> Processing Test Case: TEST_VEC_R_FTC_002
+(S) @LINE: 90
+    >>> Processed Test Case: TEST_VEC_R_FTC_002
+(I) @LINE: 97
+    >>> Processing Test Case: TEST_VEC_R_FTC_003
+(S) @LINE: 99
+    >>> Processed Test Case: TEST_VEC_R_FTC_003
+(I) @LINE: 106
+    >>> Processing Test Case: TEST_VEC_R_FTC_004
+(S) @LINE: 108
+    >>> Processed Test Case: TEST_VEC_R_FTC_004
+(I) @LINE: 115
+    >>> Processing Test Case: TEST_VEC_R_FTC_005
+(S) @LINE: 117
+    >>> Processed Test Case: TEST_VEC_R_FTC_005
+(S) @LINE: 118
+    >>> Script processing completed
+COMMAND: C:\VCAST\clicast.exe -e TEST_VEC test script create C:/VCAST/Environments/Test_Vector/build/2035200888/TEST_VEC.tst
+DIRECTORY: C:/VCAST/Environments/Test_Vector/build/2035200888
+TIME: 2026-11-12 10:09:55
+TEST SUITE: VectorCAST_MinGW_C/TestSuite
+VectorCAST Copyright (C) 1993 - 2026
+**Version 24.sp1 (04/03/24)
+    Processing options file c:\VCAST\Environments\Test_Vector\build\2035200888\CCAST_.CFG
+    Opening Environment
+    Opening Parameter/Global File
+    Opening Types File
+    Environment is Open
+    Creating Script File
+    Building Test Case Script
+    Test Case Script Created
+    Script processing completed

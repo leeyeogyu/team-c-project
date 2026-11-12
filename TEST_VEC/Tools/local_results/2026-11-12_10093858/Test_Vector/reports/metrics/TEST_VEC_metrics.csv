@@ -1,0 +1,3 @@
+Unit,Subprogram,Complexity,Cover % Statement,Covered Statements,Total Statements
+TEST_VEC,divide,2,100,3,3
+TEST_VEC,check_status,3,100,5,5

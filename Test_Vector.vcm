@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="35">
+  <config>
+    <base-directories>
+      <key>VCAST_SourceRoot</key>
+      <value>C:/VCAST/Environments</value>
+    </base-directories>
+    <saved-logs>5</saved-logs>
+    <build-directory-naming-strategy>COMPRESSED</build-directory-naming-strategy>
+  </config>
+  <project-id>1794443647</project-id>
+  <factor-config-options>0</factor-config-options>
+  <environment name="TEST_VEC" type="UNIT">
+    <language>1</language>
+    <is-monitored>0</is-monitored>
+    <config>
+      <original-environment-directory>Test_Vector/build/2035200888</original-environment-directory>
+    </config>
+  </environment>
+  <group name="test">
+    <environment name="TEST_VEC"/>
+  </group>
+  <compiler>
+    <compiler>
+      <name>VectorCAST_MinGW_C</name>
+      <config>
+        <config>
+          <key>C_COMPILER_TAG</key>
+          <value>BUILTIN_MINGW_C</value>
+        </config>
+      </config>
+    </compiler>
+    <testsuite name="TestSuite">
+      <group name="test"/>
+    </testsuite>
+  </compiler>
+</project>

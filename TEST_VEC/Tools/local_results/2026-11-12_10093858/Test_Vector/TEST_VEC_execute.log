@@ -1,0 +1,50 @@
+COMMAND: C:\VCAST\clicast.exe -e TEST_VEC -l C execute batch
+DIRECTORY: C:/VCAST/Environments/Test_Vector/build/2035200888
+TIME: 2026-11-12 10:10:09
+TEST SUITE: VectorCAST_MinGW_C/TestSuite
+VectorCAST Copyright (C) 1993 - 2026
+**Version 24.sp1 (04/03/24)
+    Processing options file c:\VCAST\Environments\Test_Vector\build\2035200888\CCAST_.CFG
+    Opening Environment
+    Opening Parameter/Global File
+    Opening Types File
+    Environment is Open
+    Running all <<COMPOUND>> test cases
+    Running: TEST_VEC_R_FTC_001
+    Preparing Test Data
+    Running Test Case
+    Running Test with command: c:\VCAST\Environments\Test_Vector\build\2035200888\TEST_VEC\UUT_INST.EXE
+    Processing Execution Data
+    Updating Coverage Data
+    Test Execution Complete
+    Running: TEST_VEC_R_FTC_002
+    Preparing Test Data
+    Running Test Case
+    Running Test with command: c:\VCAST\Environments\Test_Vector\build\2035200888\TEST_VEC\UUT_INST.EXE
+    Processing Execution Data
+    Updating Coverage Data
+    Test Execution Complete
+    Running: TEST_VEC_R_FTC_003
+    Preparing Test Data
+    Running Test Case
+    Running Test with command: c:\VCAST\Environments\Test_Vector\build\2035200888\TEST_VEC\UUT_INST.EXE
+    Processing Execution Data
+    Updating Coverage Data
+    Test Execution Complete
+    Running: TEST_VEC_R_FTC_004
+    Preparing Test Data
+    Running Test Case
+    Running Test with command: c:\VCAST\Environments\Test_Vector\build\2035200888\TEST_VEC\UUT_INST.EXE
+    Processing Execution Data
+    Updating Coverage Data
+    Test Execution Complete
+    Running: TEST_VEC_R_FTC_005
+    Preparing Test Data
+    Running Test Case
+    Running Test with command: c:\VCAST\Environments\Test_Vector\build\2035200888\TEST_VEC\UUT_INST.EXE
+    Processing Execution Data
+    Updating Coverage Data
+    Test Execution Complete
+    Running all TEST_VEC.divide test cases
+    Running all TEST_VEC.check_status test cases
+    Completed Batch Execution processing
