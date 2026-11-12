@@ -20,6 +20,15 @@ rem  /tctimeout N stop a test case after N s (default 120, 0 = none)
 rem  /legacyqp    build with the legacy QuickParse engine (default: same as the GUI, not set)
 rem  /out DIR     result folder (default: local_results\<date_time>\ next to this .bat)
 rem
+rem  Result mail files (for Jenkins, same layout as nightly_build_and_test.ps1 + Project column):
+rem  /mail        also write in the result folder summary.html, summary.csv,
+rem               coverage_by_unit.csv, VectorCAST_Full_Report.zip, VectorCAST_Metrics_Report.zip
+rem               (cmd only: findstr, tar.exe for the zips, curl.exe for the license check)
+rem  /title NAME  name in the first line of summary.html (default multi_gcc)
+rem  /nozip       with /mail: no report zips
+rem  /summaryonly DIR   run nothing - only (re)write the mail files for the result folder DIR
+rem  /exit N      with /summaryonly: exit code to show (default -)
+rem
 rem  Every project is expected in the standard Manage layout: X.vcm next to its folder X\
 rem  with X\environment\ and X\build\. All environments of a chosen project are run.
 rem  Results: <out>\summary.txt (all projects), <out>\<project>\ logs + reports\
@@ -62,8 +71,18 @@ set "ALL="
 set "TC_TIMEOUT=120"
 set "PICK="
 set "ASK=1"
+set "MAIL="
+set "MTITLE=multi_gcc"
+set "MNOZIP="
+set "MONLY="
+set "RUNEXIT=-"
 :parse
 if "%~1"=="" goto parsed
+if /i "%~1"=="/mail"        (set "MAIL=1" & shift & goto parse)
+if /i "%~1"=="/title"       (set "MTITLE=%~2" & shift & shift & goto parse)
+if /i "%~1"=="/nozip"       (set "MNOZIP=1" & shift & goto parse)
+if /i "%~1"=="/summaryonly" (set "MONLY=1" & set "OUTROOT=%~2" & shift & shift & goto parse)
+if /i "%~1"=="/exit"        (set "RUNEXIT=%~2" & shift & shift & goto parse)
 if /i "%~1"=="/root"      (set "ROOT=%~2" & shift & shift & goto parse)
 if /i "%~1"=="/out"       (set "OUTROOT=%~2" & shift & shift & goto parse)
 if /i "%~1"=="/skipbuild" (set "SKIP=1" & set "ASK=" & shift & goto parse)
@@ -78,6 +97,11 @@ set "ASK="
 shift
 goto parse
 :parsed
+if defined MONLY (
+    call :mail_summary
+    set "RC=!MAILRC!"
+    goto end
+)
 
 rem --- folder to search ------------------------------------------------------------
 if not defined ROOT (
@@ -179,6 +203,7 @@ if not exist "%OUTROOT%\" (
     set "RC=2"
     goto end
 )
+if defined MAIL call :mail_start
 
 echo ============================================================
 echo  VectorCAST build + test + report, several projects (cmd only, gcc)
@@ -223,6 +248,11 @@ if "%BUILDFAIL%"=="1" set "RC=1"
 if "%ANYFAIL%"=="1" set "RC=1"
 if "%RC%"=="0" (echo RESULT  : SUCCESS) else (echo RESULT  : FAILURE - see %OUTROOT%\summary.txt)
 echo Folder  : %OUTROOT%
+if defined MAIL (
+    set "RUNEXIT=!RC!"
+    call :mail_summary
+    if not "!MAILRC!"=="0" set "RC=1"
+)
 goto end
 
 rem --- one project: number %1 in the VCM_ list ----------------------------------------
@@ -476,9 +506,346 @@ if not defined HIT (
 echo %PSEL% | findstr /c:" %HIT% " >nul || set "PSEL=%PSEL% %HIT%"
 exit /b 0
 
+rem ================================================================================
+rem  Result mail files (/mail, /summaryonly) - cmd only
+rem ================================================================================
+
+rem --- remembers the start time in <out>\run_start.txt (for Start / Elapsed in summary.html) ---
+:mail_start
+call :m_now MSTART_S
+set "MT=%time: =0%"
+> "%OUTROOT%\run_start.txt" echo START_TXT=%date% %MT:~0,5%
+>> "%OUTROOT%\run_start.txt" echo START_S=%MSTART_S%
+exit /b 0
+
+rem --- writes summary.html / summary.csv / coverage_by_unit.csv / zips in OUTROOT -------
+rem     reads <out>\summary.txt and <out>\<project>\reports\ ; sets MAILRC (0 = SUCCESS)
+:mail_summary
+setlocal
+for %%R in ("%OUTROOT%\.") do set "OUT=%%~fR"
+if not exist "%OUT%\summary.txt" (
+    echo MAIL    no summary.txt in %OUT% - no mail files written
+    endlocal & set "MAILRC=2"
+    exit /b 0
+)
+echo.
+echo MAIL    writing summary.html / summary.csv / coverage_by_unit.csv / zips in %OUT%
+
+rem --- start / elapsed ---
+set "START_TXT=-"
+set "START_S="
+if exist "%OUT%\run_start.txt" for /f "usebackq tokens=1* delims==" %%a in ("%OUT%\run_start.txt") do set "%%a=%%b"
+set "ELAPSED=-"
+if defined START_S (
+    call :m_now END_S
+    set /a "SEC=END_S-START_S"
+    rem past midnight (runs are shorter than a day)
+    if !SEC! lss 0 set /a "SEC+=86400"
+    set /a "T10=(SEC*10+30)/60, EM=T10/10, ET=T10%%10"
+    set "ELAPSED=!EM!.!ET!"
+)
+
+rem --- license server (VECTOR_LICENSE_FILE = port@host[;port@host...]) ---
+set "LIC=License server: (VECTOR_LICENSE_FILE not set)"
+if not defined VECTOR_LICENSE_FILE goto m_lic_done
+set "LICOK="
+for %%L in ("%VECTOR_LICENSE_FILE:;=" "%") do if not defined LICOK call :m_licone "%%~L"
+if defined LICOK (
+    set "LIC=License server (%VECTOR_LICENSE_FILE%): OK"
+) else (
+    set "LIC=License server (%VECTOR_LICENSE_FILE%): <b style='color:#cf222e'>UNREACHABLE</b>"
+)
+:m_lic_done
+
+rem --- result rows from summary.txt ---
+set "ROWS=%OUT%\_rows.tmp"
+set "COVS=%OUT%\_cov.tmp"
+set "CSV=%OUT%\summary.csv"
+set "COVCSV=%OUT%\coverage_by_unit.csv"
+type nul > "%ROWS%"
+type nul > "%COVS%"
+> "%CSV%" echo "Project","Environment","Result","Run","Passed","Failed","FailedTests"
+> "%COVCSV%" echo "Project","Environment","Unit","CoveredFunctions","TotalFunctions","CoveredCalls","TotalCalls"
+set "NROW=0"
+set "NPROJ=0"
+set "NCOV=0"
+set "TOTRUN=0"
+set "TOTPASS=0"
+set "MBAD=0"
+rem pass 1: the "test case(s) stopped" notes, pass 2: the result rows
+for %%S in (1 2) do (
+    set "SCAN=%%S"
+    for /f "usebackq tokens=1,2,3* delims=/" %%A in ("%OUT%\summary.txt") do (
+        set "P=%%A"
+        set "E=%%B"
+        set "R=%%C"
+        set "D=%%D"
+        call :m_onerow
+    )
+)
+
+rem --- zips ---
+set "ZIPNOTE=<p>VectorCAST reports: none produced.</p>"
+set "ZIPLIST="
+if not defined MNOZIP (
+    call :m_zipone "reports/full" VectorCAST_Full_Report.zip
+    call :m_zipone "reports/metrics" VectorCAST_Metrics_Report.zip
+)
+if defined ZIPLIST set "ZIPNOTE=<p>Attached VectorCAST reports: !ZIPLIST:~2!</p>"
+
+rem --- overall ---
+set "OVERALL=SUCCESS"
+if "%NROW%"=="0" set "OVERALL=FAILURE"
+if not "%MBAD%"=="0" set "OVERALL=FAILURE"
+if not "%RUNEXIT%"=="-" if not "%RUNEXIT%"=="0" set "OVERALL=FAILURE"
+
+rem --- summary.html ---
+set "HTML=%OUT%\summary.html"
+set "H=<html><body style='font-family:Segoe UI,Malgun Gothic,sans-serif;font-size:13px'>"
+> "%HTML%" echo(!H!
+set "H=<h3>VectorCAST nightly - !MTITLE! : !OVERALL!</h3>"
+>> "%HTML%" echo(!H!
+set "H=<p>Start: !START_TXT! / Elapsed: !ELAPSED! min / Exit code: !RUNEXIT! / Projects: !NPROJ! / Tests: !TOTPASS! / !TOTRUN! passed / !LIC!</p>"
+>> "%HTML%" echo(!H!
+set "H=<table border='1' cellpadding='4' cellspacing='0' style='border-collapse:collapse'>"
+>> "%HTML%" echo(!H!
+set "H=<tr style='background:#eee'><th>Project</th><th>Environment</th><th>Result</th><th>Run</th><th>Passed</th><th>Failed</th><th>Failed tests</th></tr>"
+>> "%HTML%" echo(!H!
+type "%ROWS%" >> "%HTML%"
+set "H=</table>"
+>> "%HTML%" echo(!H!
+>> "%HTML%" echo(!ZIPNOTE!
+if "%NCOV%"=="0" (
+    set "H=<p>Coverage: no metrics report was produced.</p>"
+    >> "%HTML%" echo(!H!
+) else (
+    set "H=<h4>Coverage by unit (Function / Function Call)</h4>"
+    >> "%HTML%" echo(!H!
+    set "H=<table border='1' cellpadding='4' cellspacing='0' style='border-collapse:collapse'>"
+    >> "%HTML%" echo(!H!
+    set "H=<tr style='background:#eee'><th>Project</th><th>Environment</th><th>Unit</th><th>Functions</th><th>Function calls</th></tr>"
+    >> "%HTML%" echo(!H!
+    type "%COVS%" >> "%HTML%"
+    set "H=</table>"
+    >> "%HTML%" echo(!H!
+)
+set "H=</body></html>"
+>> "%HTML%" echo(!H!
+del "%ROWS%" "%COVS%" > nul 2>&1
+
+echo MAIL    %OVERALL% - %HTML%
+if "%OVERALL%"=="SUCCESS" (set "MRC=0") else (set "MRC=1")
+endlocal & set "MAILRC=%MRC%"
+exit /b 0
+
+rem --- one line of summary.txt: P / E / R / D ------------------------------------------
+:m_onerow
+call :m_trim P
+call :m_trim E
+call :m_trim R
+if not defined E exit /b 0
+if not defined R exit /b 0
+if "!P!"=="Project" if "!E!"=="Environment" exit /b 0
+rem "<n> test case(s) stopped after <s> s (infinite loop?)"
+if not "!R:stopped after=!"=="!R!" (
+    if "!SCAN!"=="1" set "NOTE[!P!][!E!]=!R!"
+    exit /b 0
+)
+if "!SCAN!"=="1" exit /b 0
+set /a NROW+=1
+if not defined PSEEN[!P!] (
+    set "PSEEN[!P!]=1"
+    set /a NPROJ+=1
+)
+set "MRES=!R!"
+set "RUN=0"
+set "PASSN=0"
+set "FT="
+set "SKIPROW="
+if "!E!"=="-" (
+    call :m_trim D
+    if "!MRES!"=="NOT_GCC" set "SKIPROW=1"
+    if "!MRES!"=="NO_ENVIRONMENT" set "SKIPROW=1"
+    if defined SKIPROW (set "FT=skipped: !D!") else (set "FT=!D!")
+    goto m_row_write
+)
+set "MG=%OUT%\!P!\reports\metrics\!E!_management_report.html"
+if exist "!MG!" (
+    call :m_mgmt
+    rem PASS / FAIL from the test case rows, as nightly_build_and_test.ps1 does
+    if "!R!"=="PASS" set "MRES=DECIDE"
+    if "!R!"=="FAIL" set "MRES=DECIDE"
+    if "!MRES!"=="DECIDE" (
+        if !RUN! equ 0 (
+            set "MRES=NO_TESTS"
+        ) else if !PASSN! equ !RUN! (
+            set "MRES=PASS"
+        ) else (
+            set "MRES=FAIL"
+        )
+    )
+)
+if defined NOTE[!P!][!E!] (
+    set "NT=(!NOTE[%P%][%E%]!)"
+    if defined FT (set "FT=!FT!; !NT!") else (set "FT=!NT!")
+    if "!MRES!"=="PASS" set "MRES=TC_TIMEOUT"
+)
+set "MC=%OUT%\!P!\reports\metrics\!E!_metrics.csv"
+if exist "!MC!" call :m_coverage
+:m_row_write
+set /a "FAILN=RUN-PASSN, TOTRUN+=RUN, TOTPASS+=PASSN"
+set "COLOR=#cf222e"
+if "!MRES!"=="PASS" set "COLOR=#1a7f37"
+if "!MRES!"=="TC_TIMEOUT" set "COLOR=#bc4c00"
+if defined SKIPROW set "COLOR=#6e7781"
+if not "!MRES!"=="PASS" if not defined SKIPROW set /a MBAD+=1
+set "FTH="
+if defined FT (
+    set "FTH=!FT:&=&amp;!"
+    set "FTH=!FTH:<=&lt;!"
+    set "FTH=!FTH:>=&gt;!"
+)
+set "H=<tr><td>!P!</td><td>!E!</td><td style='color:!COLOR!;font-weight:bold'>!MRES!</td><td>!RUN!</td><td>!PASSN!</td><td>!FAILN!</td><td>!FTH!</td></tr>"
+>> "%ROWS%" echo(!H!
+>> "%CSV%" echo "!P!","!E!","!MRES!","!RUN!","!PASSN!","!FAILN!","!FT!"
+exit /b 0
+
+rem --- Management Report test case rows ------------------------------------------------
+rem   <td ...>NAME</td><td ...>22 OCT 2026  2:19:32 PM</td><td ...>FAIL 0 / 1</td>
+rem (compound rows show just PASS / FAIL without counts)
+:m_mgmt
+rem %MG% (not !MG!): on a line with ! cmd also strips the ^ inside quotes, breaking [^>]
+for /f "usebackq delims=" %%L in (`findstr /r /c:"[AP]M</td><td[^>]*>PASS" /c:"[AP]M</td><td[^>]*>FAIL" "%MG%"`) do (
+    set "L=%%L"
+    call :m_tcrow
+)
+exit /b 0
+
+:m_tcrow
+set "L=!L:"=!"
+set "L=!L:*<td=!"
+set "L=!L:*<td=!"
+set "L=!L:*<td=!"
+set "L=!L:*>=!"
+set "N="
+for /f "delims=<" %%N in ("!L!") do set "N=%%N"
+if not defined N exit /b 0
+if defined SEEN[!NROW!][!N!] exit /b 0
+set "SEEN[!NROW!][!N!]=1"
+set /a RUN+=1
+if not "!L:>PASS=!"=="!L!" (
+    set /a PASSN+=1
+) else (
+    if defined FT (set "FT=!FT!; !N!") else (set "FT=!N!")
+)
+exit /b 0
+
+rem --- metrics CSV: Unit,Subprogram,Complexity,Cover %% Function,Covered Functions,
+rem     Total Functions,Cover %% Call,Covered Calls,Total Calls  - summed per unit ---------
+:m_coverage
+set "NU=0"
+for /f "usebackq skip=1 tokens=1,5,6,8,9 delims=," %%a in ("!MC!") do (
+    if not defined CU[!NROW!][%%a] (
+        set /a NU+=1
+        set "CU[!NROW!][%%a]=!NU!"
+        set "UN[!NU!]=%%a"
+        set /a "CF[!NU!]=0, TF[!NU!]=0, CC[!NU!]=0, TC[!NU!]=0"
+    )
+    set "IX=!CU[%NROW%][%%a]!"
+    set /a "CF[!IX!]+=%%b, TF[!IX!]+=%%c, CC[!IX!]+=%%d, TC[!IX!]+=%%e"
+)
+for /l %%i in (1,1,!NU!) do (
+    call :m_fmtcov !CF[%%i]! !TF[%%i]! F1
+    call :m_fmtcov !CC[%%i]! !TC[%%i]! F2
+    set "H=<tr><td>!P!</td><td>!E!</td><td>!UN[%%i]!</td><td>!F1!</td><td>!F2!</td></tr>"
+    >> "%COVS%" echo(!H!
+    >> "%COVCSV%" echo "!P!","!E!","!UN[%%i]!","!CF[%%i]!","!TF[%%i]!","!CC[%%i]!","!TC[%%i]!"
+    set /a NCOV+=1
+)
+exit /b 0
+
+rem --- "covered / total (pct%)" or "-" when total is 0 --------------------------------
+:m_fmtcov
+if "%~2"=="0" (
+    set "%~3=-"
+    exit /b 0
+)
+set /a "PCT=%~1*100/%~2"
+set "%~3=%~1 / %~2 (!PCT!%%)"
+exit /b 0
+
+rem --- zip <project>/<sub>/* of every project into %OUT%\%2 --------------------------
+:m_zipone
+set "SUB=%~1"
+set "ZIP=%OUT%\%~2"
+set "LST=%OUT%\_zip.lst"
+if exist "%ZIP%" del "%ZIP%"
+type nul > "%LST%"
+set "NF=0"
+for /d %%P in ("%OUT%\*") do if exist "%%P\%SUB:/=\%\" for %%F in ("%%P\%SUB:/=\%\*") do (
+    >> "%LST%" echo(%%~nxP/%SUB%/%%~nxF
+    set /a NF+=1
+)
+if "%NF%"=="0" (
+    del "%LST%"
+    exit /b 0
+)
+set "TAR=%SystemRoot%\System32\tar.exe"
+if not exist "%TAR%" (
+    echo MAIL    %TAR% not found - %~2 not made
+    del "%LST%"
+    exit /b 0
+)
+"%TAR%" -a -c -f "%ZIP%" -C "%OUT%" -T "%LST%"
+del "%LST%"
+if not exist "%ZIP%" (
+    echo MAIL    could not make %ZIP%
+    exit /b 0
+)
+for %%Z in ("%ZIP%") do set "SZ=%%~zZ"
+set /a "KB=SZ/1024, T10=(KB*10+512)/1024, MB=T10/10, MD=T10%%10"
+set "ZIPLIST=!ZIPLIST!, %~2 (!MB!.!MD! MB, !NF! files)"
+echo ZIP     %ZIP%
+exit /b 0
+
+rem --- license server reachable? %1 = port@host (other entries, e.g. files, are skipped) ---
+:m_licone
+set "LPORT="
+set "LHOST="
+for /f "tokens=1,2 delims=@" %%a in ("%~1") do (
+    set "LPORT=%%a"
+    set "LHOST=%%b"
+)
+if not defined LHOST exit /b 0
+set "LCURL=%SystemRoot%\System32\curl.exe"
+if not exist "%LCURL%" exit /b 0
+rem curl prints the remote address only when the TCP connection was made
+for /f "delims=" %%r in ('%LCURL% -s -o NUL --connect-timeout 5 -m 6 -w "%%{remote_ip}" telnet://%LHOST%:%LPORT% ^<NUL 2^>NUL') do set "LICOK=1"
+exit /b 0
+
+rem --- seconds since midnight of %time% into variable %1 -------------------------------
+:m_now
+set "NT_=%time: =0%"
+set /a "%~1=(1%NT_:~0,2%-100)*3600+(1%NT_:~3,2%-100)*60+(1%NT_:~6,2%-100)"
+exit /b 0
+
+rem --- remove leading / trailing spaces of variable %1 ------------------------------------
+:m_trim
+if not defined %~1 exit /b 0
+if "!%~1:~0,1!"==" " (
+    set "%~1=!%~1:~1!"
+    goto m_trim
+)
+if "!%~1:~-1!"==" " (
+    set "%~1=!%~1:~0,-1!"
+    goto m_trim
+)
+exit /b 0
+
 :usage
 echo Usage: %SELF% [/root FOLDER] [PROJECT ...] [/all] [/skipbuild] [/noreports] [/nopause]
-echo        [/tctimeout SEC] [/legacyqp] [/out FOLDER]
+echo        [/tctimeout SEC] [/legacyqp] [/out FOLDER] [/mail [/title NAME] [/nozip]]
+echo        %SELF% /summaryonly FOLDER [/exit N] [/title NAME] [/nozip]
 echo PROJECT = .vcm name without extension, or its number in the list.
 set "RC=0"
 
