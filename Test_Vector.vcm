@@ -3,7 +3,7 @@
   <config>
     <base-directories>
       <key>VCAST_SourceRoot</key>
-      <value>C:/VCAST/Environments</value>
+      <value>.</value>
     </base-directories>
     <saved-logs>5</saved-logs>
     <build-directory-naming-strategy>COMPRESSED</build-directory-naming-strategy>
