@@ -17,3 +17,4 @@ int check_status(int temp, int voltage, int error_flag) {
     }
     return 0;
 }
+// TEST
